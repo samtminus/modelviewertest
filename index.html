@@ -3,10 +3,38 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>My 3D Model</title>
+
+    <!-- Include model-viewer script -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.0.0/dist/model-viewer.min.js"></script>
   </head>
   <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is a simple website hosted on GitHub Pages!</p>
+    <h1>3D Model: Berlin Wall</h1>
+
+    <!-- Model Viewer -->
+    <model-viewer src="https://github.com/samtminus/modelviewertest/blob/b086979c2c1ad1dfd558e371bf59e7e1af66f277/Models/berlin_wall.glb" 
+      ar 
+      ar-modes="webxr scene-viewer quick-look" 
+      camera-controls 
+      tone-mapping="neutral" 
+      poster="" 
+      shadow-intensity="1">
+      
+      <!-- Progress bar while the model is loading -->
+      <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+      </div>
+      
+      <!-- AR button -->
+      <button slot="ar-button" id="ar-button">
+        View in your space
+      </button>
+      
+      <!-- AR prompt -->
+      <div id="ar-prompt">
+        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+      </div>
+    </model-viewer>
+
   </body>
 </html>
